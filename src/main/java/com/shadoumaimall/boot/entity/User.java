@@ -19,62 +19,62 @@ import lombok.Setter;
 
 
 /**
-* <p>
-    * 
-    * </p>
-*
-* @author 啊啊啊啊不吵吵
-* @since 2023-01-16
-*/
-    @Getter
-    @Setter
+ * <p>
+ *
+ * </p>
+ *
+ * @author 啊啊啊啊不吵吵
+ * @since 2023-01-16
+ */
+@Getter
+@Setter
 @ApiModel(value = "User对象", description = "")
-    public class User implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-            // id
-            @ApiModelProperty("id")
-            @Alias("id")
-            @TableId(value = "id", type = IdType.AUTO)
+    // id
+    @ApiModelProperty("id")
+    @Alias("id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-            // 账号
-            @ApiModelProperty("账号")
-            @Alias("账号")
+    // 账号
+    @ApiModelProperty("账号")
+    @Alias("账号")
     private String account;
     // 昵称
     @ApiModelProperty("昵称")
     @Alias("昵称")
     private String name;
-            // 密码
-            @ApiModelProperty("密码")
-            @Alias("密码")
+    // 密码
+    @ApiModelProperty("密码")
+    @Alias("密码")
     private String password;
 
-            // 手机号
-            @ApiModelProperty("手机号")
-            @Alias("手机号")
+    // 手机号
+    @ApiModelProperty("手机号")
+    @Alias("手机号")
     private String phone;
 
-            // 邮箱
-            @ApiModelProperty("邮箱")
-            @Alias("邮箱")
+    // 邮箱
+    @ApiModelProperty("邮箱")
+    @Alias("邮箱")
     private String email;
 
-            // 创建时间
-            @ApiModelProperty("创建时间")
-            @Alias("创建时间")
-            @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss", timezone = "GMT+8")
+    // 创建时间
+    @ApiModelProperty("创建时间")
+    @Alias("创建时间")
+    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss", timezone = "GMT+8")
             /*@TableField(fill = FieldFill.INSERT_UPDATE)
             @JsonDeserialize(using = LDTConfig.CmzLdtDeSerializer.class)
             @JsonSerialize(using = LDTConfig.CmzLdtSerializer.class)*/
     private LocalDateTime createtime;
 
-            // 更新时间
-            @ApiModelProperty("更新时间")
-            @Alias("更新时间")
-            @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss", timezone = "GMT+8")
+    // 更新时间
+    @ApiModelProperty("更新时间")
+    @Alias("更新时间")
+    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss", timezone = "GMT+8")
             /*@TableField(fill = FieldFill.INSERT_UPDATE)
             @JsonDeserialize(using = LDTConfig.CmzLdtDeSerializer.class)
             @JsonSerialize(using = LDTConfig.CmzLdtSerializer.class)*/
