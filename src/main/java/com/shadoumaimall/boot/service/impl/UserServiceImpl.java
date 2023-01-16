@@ -1,13 +1,11 @@
 package com.shadoumaimall.boot.service.impl;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.shadoumaimall.boot.common.Constants;
 import com.shadoumaimall.boot.controller.domain.UserRequest;
 import com.shadoumaimall.boot.entity.User;
 import com.shadoumaimall.boot.exception.ServiceException;
@@ -19,7 +17,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -40,7 +37,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     EmailUtils emailUtils;
 
     @Override
-    public User login(User user) {
+    public User login(UserRequest user) {
         User dbUser = null;
         try {
             dbUser = getOne(new UpdateWrapper<User>().eq("account", user.getAccount()));

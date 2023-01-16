@@ -14,7 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
-    User login(User user);
+    User login(UserRequest user);
 
     String passwordReset(UserRequest userRequest);
 
